@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Search Typeahead System</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-label="Search typeahead demo">
+        <div class="mast">
+          <div>
+            <p class="eyebrow">HLD Typeahead Demo</p>
+            <h1>Search Typeahead System</h1>
+          </div>
+          <div class="status-strip" id="systemStatus">Loading metrics</div>
+        </div>
+
+        <form class="search-panel" id="searchForm" autocomplete="off">
+          <div class="search-row">
+            <label class="sr-only" for="searchInput">Search query</label>
+            <input
+              id="searchInput"
+              name="query"
+              type="search"
+              placeholder="Try iphone, java, react, python..."
+              aria-label="Search query"
+              aria-autocomplete="list"
+              aria-controls="suggestions"
+            >
+            <button type="submit" class="search-button">Search</button>
+          </div>
+          <div class="mode-row">
+            <label class="segmented">
+              <input type="radio" name="rankMode" value="trending" checked>
+              <span>Trending rank</span>
+            </label>
+            <label class="segmented">
+              <input type="radio" name="rankMode" value="count">
+              <span>Count rank</span>
+            </label>
+            <span class="hint" id="requestState">Type to fetch suggestions</span>
+          </div>
+          <ul class="suggestions" id="suggestions" role="listbox"></ul>
+        </form>
+
+        <div class="result-bar" id="resultBar" aria-live="polite"></div>
+
+        <section class="grid">
+          <div class="panel">
+            <div class="panel-head">
+              <h2>Trending Searches</h2>
+              <button class="small-button" id="refreshTrending" type="button">Refresh</button>
+            </div>
+            <ol class="rank-list" id="trendingList"></ol>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head">
+              <h2>Cache Debug</h2>
+              <button class="small-button" id="debugButton" type="button">Inspect</button>
+            </div>
+            <pre class="debug-box" id="debugBox">Select or type a prefix to inspect cache ownership.</pre>
+          </div>
+        </section>
+      </section>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
