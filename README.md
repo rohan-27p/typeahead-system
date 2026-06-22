@@ -190,6 +190,12 @@ Latest measured result:
 | DB writes after batching | 2 |
 | Write reduction | 99.00% |
 
+## Project Report
+
+The final project report is available at:
+
+- [PROJECT_REPORT.md](PROJECT_REPORT.md)
+
 ## Design Choices and Trade-Offs
 
 1. SQLite prefix search instead of trie
