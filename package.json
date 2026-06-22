@@ -9,6 +9,7 @@
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
     "perf": "node scripts/performance-report.js",
+    "benchmark": "node scripts/performance-report.js",
     "test": "node --test"
   },
   "engines": {

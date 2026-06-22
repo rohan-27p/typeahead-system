@@ -1,0 +1,11 @@
+services:
+  typeahead:
+    build: .
+    container_name: typeahead-system
+    ports:
+      - "3002:3000"
+    environment:
+      PORT: 3000
+      CACHE_TTL_MS: 60000
+      BATCH_FLUSH_MS: 5000
+      BATCH_SIZE: 100

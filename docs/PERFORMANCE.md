@@ -1,15 +1,21 @@
-# Performance Report Template
+# Performance And Benchmark
 
 Run:
 
 ```bash
-npm run perf
+npm run benchmark
 ```
 
 The generated report is written to:
 
 ```text
 docs/generated-performance-report.md
+```
+
+The submission-facing benchmark summary is also available at:
+
+```text
+benchmark_report.md
 ```
 
 Include the generated values in the final submission.

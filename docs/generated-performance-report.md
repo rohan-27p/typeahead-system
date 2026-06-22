@@ -1,17 +1,17 @@
 # Generated Performance Report
 
-Generated at: 2026-06-21T18:17:23.960Z
+Generated at: 2026-06-22T05:47:02.005Z
 
 ## Dataset
 
-- Rows loaded: 120002
+- Rows loaded: 120005
 
 ## Suggest Latency
 
 | Scenario | Requests | p50 ms | p95 ms |
 |---|---:|---:|---:|
-| Cold-ish cache | 100 | 0.83 | 5.11 |
-| Warm cache | 300 | 0.99 | 2.27 |
+| Cold-ish cache | 100 | 0.52 | 23.79 |
+| Warm cache | 300 | 0.44 | 0.76 |
 
 ## Cache
 
