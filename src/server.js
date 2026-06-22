@@ -93,7 +93,7 @@ function queryStoreForSuggestions(prefix, rankingMode) {
 async function handleSuggest(reqUrl, res) {
   const started = performance.now();
   const prefix = normalizeQuery(reqUrl.searchParams.get('q'));
-  const rankingMode = reqUrl.searchParams.get('rank') === 'count' ? 'count' : 'trending';
+  const rankingMode = reqUrl.searchParams.get('rank') === 'trending' ? 'trending' : 'count';
 
   if (!prefix) {
     metrics.recordSuggestLatency(performance.now() - started);
@@ -158,7 +158,7 @@ async function handleSearch(req, res) {
 
 function handleCacheDebug(reqUrl, res) {
   const prefix = normalizeQuery(reqUrl.searchParams.get('prefix'));
-  const rankingMode = reqUrl.searchParams.get('rank') === 'count' ? 'count' : 'trending';
+  const rankingMode = reqUrl.searchParams.get('rank') === 'trending' ? 'trending' : 'count';
   if (!prefix) {
     return sendJson(res, 400, { error: 'prefix is required' });
   }

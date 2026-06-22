@@ -13,7 +13,7 @@ Fetch up to 10 suggestions whose queries start with the prefix.
 Query parameters:
 
 - `q`: typed prefix.
-- `rank`: optional. Use `trending` or `count`. Defaults to `trending`.
+- `rank`: optional. Use `count` or `trending`. Defaults to `count` so the bare required endpoint returns count-sorted suggestions.
 
 Example:
 
@@ -51,7 +51,7 @@ Behavior:
 - No matches returns an empty list.
 - Results are capped at 10.
 - `rank=count` sorts by all-time count.
-- `rank=trending` sorts by recency-aware score.
+- `rank=trending` sorts by recency-aware score for the enhanced version.
 
 ## `POST /search`
 
