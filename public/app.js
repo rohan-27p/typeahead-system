@@ -51,6 +51,12 @@ function renderSuggestions(items) {
   suggestionsEl.classList.add('open');
 }
 
+function closeSuggestions({ blur = false } = {}) {
+  clearTimeout(debounceTimer);
+  renderSuggestions([]);
+  if (blur) input.blur();
+}
+
 function updateActive() {
   [...suggestionsEl.children].forEach((child, index) => {
     child.classList.toggle('active', index === activeIndex);
@@ -184,8 +190,13 @@ input.addEventListener('keydown', (event) => {
   }
 
   if (event.key === 'Escape') {
-    renderSuggestions([]);
+    closeSuggestions({ blur: true });
   }
+});
+
+document.addEventListener('pointerdown', (event) => {
+  if (form.contains(event.target)) return;
+  closeSuggestions({ blur: true });
 });
 
 refreshTrending.addEventListener('click', loadTrending);
